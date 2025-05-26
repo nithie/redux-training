@@ -7,10 +7,10 @@ import {
     Typography,
     Stack
 } from '@mui/material';
-import type { Comment } from '../posts/types';
+import type { FullComment } from '../posts/types';
 
 type Props = {
-    comment: Comment;
+    comment: FullComment;
 }
 
 const CommentCard: FunctionComponent<Props> = ({ comment }: Props) => {

@@ -16,7 +16,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import SendIcon from '@mui/icons-material/Send';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import type { Post } from './types';
+import type { FullPost } from './types';
 import type { FunctionComponent } from 'react';
 import dayjs from 'dayjs';
 import { Link } from 'react-router';
@@ -24,7 +24,7 @@ import { useAppDispatch } from '../../app/hooks';
 import { likePost } from './postsSlice';
 
 type Props = {
-    post: Post;
+    post: FullPost;
 }
 
 const PostCard: FunctionComponent<Props> = ({ post }: Props) => {
@@ -58,8 +58,8 @@ const PostCard: FunctionComponent<Props> = ({ post }: Props) => {
                     </Grid>
                     <Grid container alignItems="center">
                         <Link to={`post/${post.id}`}><IconButton><ChatBubbleOutlineIcon /></IconButton></Link>
-                        {post.commments.length > 0 && <Typography variant="body2" fontWeight="bold">
-                            {post.commments.length}
+                        {post.comments.length > 0 && <Typography variant="body2" fontWeight="bold">
+                            {post.comments.length}
                         </Typography>}
                     </Grid>
                     <IconButton><SendIcon /></IconButton>

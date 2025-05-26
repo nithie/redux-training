@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
-import type { Post } from "./types";
+import type { FullPost } from "./types";
 
-export const data: Post[] = [
+export const data: FullPost[] = [
     {
         id: "post_1",
 
@@ -11,8 +11,9 @@ export const data: Post[] = [
             name: 'Alice Johnson',
             pic: "https://i.pravatar.cc/300?img=4",
         },
-        commments: [
+        comments: [
             {
+                "postId": "post_1",
                 "content": "This is message 1.",
                 "createdAt": "2025-05-26T10:00:00Z",
                 "id": nanoid(),
@@ -23,6 +24,7 @@ export const data: Post[] = [
                 }
             },
             {
+                "postId": "post_1",
                 "content": "This is message 3.",
                 "createdAt": "2025-05-26T10:02:00Z",
                 "id": nanoid(),
@@ -34,6 +36,7 @@ export const data: Post[] = [
             },
 
             {
+                "postId": "post_1",
                 "content": "This is message 5.",
                 "createdAt": "2025-05-26T10:04:00Z",
                 "id": nanoid(),
@@ -44,6 +47,7 @@ export const data: Post[] = [
                 }
             },
             {
+                "postId": "post_1",
                 "content": "This is message 7.",
                 "createdAt": "2025-05-26T10:06:00Z",
                 "id": nanoid(),
@@ -54,6 +58,7 @@ export const data: Post[] = [
                 }
             },
             {
+                "postId": "post_1",
                 "content": "This is message 9.",
                 "createdAt": "2025-05-26T10:08:00Z",
                 "id": nanoid(),
@@ -78,7 +83,7 @@ export const data: Post[] = [
             name: 'John Doe',
             pic: "https://i.pravatar.cc/300?img=3",
         },
-        commments: [],
+        comments: [],
         content: 'Workout done. Endorphins up. Consistency beats motivation every time.#FitnessLife #DailyGrind',
         createdAt: "2025-04-15T08:45:37Z",
         likes: 20,
@@ -93,7 +98,7 @@ export const data: Post[] = [
             name: 'Charlie Davis',
             pic: "https://i.pravatar.cc/300?img=2",
         },
-        commments: [],
+        comments: [],
         content: 'Mondays are for coffee and quiet vibes. Here’s to a fresh start and focused energy.#MondayMotivation',
         createdAt: "2025-05-01T21:18:59Z",
         likes: 32,
@@ -108,7 +113,7 @@ export const data: Post[] = [
             name: 'Bob Smith',
             pic: "https://i.pravatar.cc/300?img=1",
         },
-        commments: [],
+        comments: [],
         content: "Travel teaches what books can’t. New city, new stories, same wanderlust. ✈️ #TravelDiaries",
         createdAt: "2025-03-30T03:07:22Z",
         likes: 109,
