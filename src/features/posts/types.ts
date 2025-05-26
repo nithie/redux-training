@@ -12,14 +12,6 @@ export type Comment = {
     postId: string;
 }
 
-export type FullComment = {
-    content: string;
-    createdAt: string;
-    user: User;
-    id: string;
-    postId: string;
-}
-
 export type Post = {
     id: string;
     content: string;
@@ -29,6 +21,14 @@ export type Post = {
     createdAt: string;
     likes: number;
     userLiked: boolean;
+}
+
+export type FullComment = {
+    content: string;
+    createdAt: string;
+    user: User;
+    id: string;
+    postId: string;
 }
 
 export type FullPost = {
@@ -42,7 +42,7 @@ export type FullPost = {
     userLiked: boolean;
 }
 export type NormalisedPost = {
-    posts: Record<string, Post>;
-    users: Record<string, User>;
-    comments: Record<string, Comment>;
+    posts?: Record<string, Post>;
+    users?: Record<string, User>;
+    comments?: Record<string, Comment>;
 }

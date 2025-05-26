@@ -4,7 +4,6 @@ import type { FullPost } from "./types";
 export const data: FullPost[] = [
     {
         id: "post_1",
-
         image: '/static/images/posts/bg_1.jpg',
         author: {
             id: 'user_1',

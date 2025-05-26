@@ -26,9 +26,10 @@ export const getAllPosts = (state: RootState): FullPost[] | null => {
 
     const hasPosts = Object.keys(state.posts.posts).length > 0;
     if (hasPosts) {
-        const postsKeys = Object.keys(state.posts);
+        const postsKeys = Object.keys(state.posts.posts);
         return postsKeys.map((key) => {
             const post = state.posts.posts[key];
+            console.log(post);
             return {
                 ...post,
                 author: state.posts.users[post.author],

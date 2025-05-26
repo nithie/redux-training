@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../app/store";
@@ -15,7 +15,6 @@ export const postSlice = createSlice({
     name: 'posts',
     reducers: {
         postReceived(state, action: PayloadAction<NormalisedPost>) {
-            console.log(action.payload)
             const { users, posts, comments } = action.payload;
             if (users) state.users = { ...state.users, ...users };
             if (posts) state.posts = { ...state.posts, ...posts };
@@ -23,7 +22,7 @@ export const postSlice = createSlice({
         },
         likePost(state, action: PayloadAction<FullPost>) {
             const { id } = action.payload;
-            if (state.posts[id]) {
+            if (state.posts?.[id]) {
                 if (state.posts[id].userLiked) {
                     state.posts[id].userLiked = false;
                     state.posts[id].likes += 1;
@@ -35,7 +34,8 @@ export const postSlice = createSlice({
             }
         },
         addComment(state, action: PayloadAction<Comment>) {
-            state.comments[action.payload.id] = action.payload;
+            if (state.comments)
+                state.comments[action.payload.id] = action.payload;
         }
     }
 });
@@ -43,5 +43,5 @@ export const postSlice = createSlice({
 export const { likePost, addComment, postReceived } = postSlice.actions;
 
 export const selectPostById = (state: RootState, postId: string) =>
-    state.posts.posts[postId];
+    state.posts.posts?.[postId];
 

@@ -10,5 +10,5 @@ export const App = () => {
     dispatch(fetchPost())
   }, [dispatch]);
 
-  <AppRoutes />
+  return <AppRoutes />
 }
